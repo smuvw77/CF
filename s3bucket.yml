@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS CloudFormation Template to create an S3_Website_Bucket_With_Retain_On_Delete'
+Parameters:
+  BucketNameParameter:
+    Type: String
+    Description: Bucket Name
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketNameParameter
+Outputs:
+  BucketName:
+    Value: !Ref 'S3Bucket'
+    Description: Name of the sample Amazon S3 bucket.
